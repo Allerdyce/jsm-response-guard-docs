@@ -1,6 +1,6 @@
 # Privacy policy: Approved Response Macros & Compliance Templates for JSM
 
-Updated 9 November 2026
+Updated 10 November 2026
 
 This policy describes the Atlassian Marketplace app **Approved Response Macros & Compliance Templates for JSM** ("the app"), made by EvidencePair LLC ("EvidencePair", "we"). EvidencePair's company privacy policy, which covers our website and email you send us, is at <https://evidencepair.com/privacy/>.
 
@@ -18,12 +18,13 @@ This policy describes the Atlassian Marketplace app **Approved Response Macros &
   - the project's key and ID;
   - how many parts ("shards") the library is split into, their keys, the number of macros and their total size;
   - the list of variables macros can use;
-  - a service desk ID field, which this version always sets to `1`, whatever the project;
   - the Atlassian account ID of the person who last saved the library, and when;
   - a record of the property's own size.
+
+  Libraries saved by versions before 10 November 2026 also hold a service desk ID field, always set to `1`. The app no longer reads or writes it. It disappears the next time someone saves the library.
 - `responseGuardPack_1`, `responseGuardPack_2` and so on, which hold the macros. For each macro: its ID, title, category, version, whether it is approved, whether it goes out by default as a public reply or an internal note, its body template and its locked disclaimer, as typed. Each of these properties also repeats the project's key and ID, the account ID of the person who saved it and when, and its own size.
 
-Until someone saves a library, the app stores nothing on the project and offers four built-in default macros.
+Until someone saves a library, the app stores nothing on the project and offers four built-in example macros. Their text contains no personal data.
 
 **One issue property, `responseGuardAudit`, per issue where someone sent a macro:**
 
@@ -49,7 +50,9 @@ From Jira's user data, the app uses only the issue reporter's display name. It p
 
 - The issue the panel is opened on: its summary, status, reporter and project (name, key and ID). From the reporter it uses only the display name.
 - The project's macro library properties, and the issue's `responseGuardAudit` property.
-- On the project page, the 15 most recently updated issues in the project (key, summary, status and reporter) and each one's `responseGuardAudit` property, to build the audit list and its CSV. If that search returns no issues, the app instead reads issue `ITH-1`, a test issue key left in its configuration, and that issue's `responseGuardAudit` property, if the issue exists on your site and the viewer can see it.
+- On the project page, the 15 most recently updated issues in the project (key, summary, status and reporter) and each one's `responseGuardAudit` property, to build the audit list and its CSV. If that search returns no issues, the list is empty.
+
+The issue panel works only on the issue Jira opened it on, and the project page only on its own project. If Jira does not say which issue or project that is, the app shows a message and reads nothing.
 
 It reads no issue descriptions, existing comments or attachments.
 
@@ -69,7 +72,7 @@ Jira's permissions also decide who can change things. Every request the app make
 
 ## Retention and deletion
 
-The app keeps its properties until someone deletes them. It has no retention setting, deletes nothing on its own schedule, and has no uninstall step. Its screens cannot delete a macro, an audit entry or a property.
+The app keeps its properties until someone deletes them. It has no retention setting, deletes nothing on its own schedule, and has no uninstall step. Its screens cannot delete an audit entry or a property. On the project page, someone who can administer the project can remove a macro: the app then saves the library without it.
 
 - Each issue's audit record keeps the 25 most recent sends. When a newer one is added, the oldest entry is dropped.
 - Saving a library replaces its properties. If a later save needs fewer shards than before, the extra ones stay on the project, unused.
@@ -83,7 +86,9 @@ The app does not take part in Atlassian's personal data reporting. When an Atlas
 
 ## Platform logs
 
-The app writes nothing to the Forge platform's logs. Atlassian's platform can still record errors it sees while the app runs, such as an unhandled error and its message ([Atlassian: view app logs](https://developer.atlassian.com/platform/forge/view-app-logs/)). The app's own error messages can include an issue key, a property key and, when posting a comment fails, Jira's error response.
+The app writes nothing to the Forge platform's logs. Atlassian's platform can still record errors it sees while the app runs, such as an unhandled error and its message ([Atlassian: view app logs](https://developer.atlassian.com/platform/forge/view-app-logs/)).
+
+When something goes wrong, for example an issue or library the app cannot read, the app shows a message on screen. That message can include an issue key, a property key or a macro ID. It is not written to the logs. If posting a comment or saving a property fails, that error can reach the platform's logs, with the issue key, the property key and, for a comment, Jira's error response.
 
 ## Email and support
 
