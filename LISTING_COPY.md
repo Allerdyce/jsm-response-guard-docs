@@ -26,7 +26,7 @@
 
 **Eliminate unapproved customer promises, missing legal disclaimers, and unverified agent replies in Jira Service Management.**
 
-**Approved Response Macros & Compliance Templates for JSM** equips service desk teams with regulator-ready response templates, immutable compliance disclaimers, and cryptographic dispatch auditing:
+**Approved Response Macros & Compliance Templates for JSM** equips service desk teams with approved response templates, immutable compliance disclaimers, and cryptographic dispatch auditing:
 
 - **1-Click JSM Public Reply vs. Internal Agent Note Routing (`jsm-response-guard-panel`)**: Interpolates `{{issue.key}}`, `{{issue.summary}}`, `{{reporter.displayName}}`, and `{{project.name}}` in real time and dispatches Atlassian Document Format (`ADF`) comments with `sd.public.comment` visibility control.
 - **Sharded Macro Library & Locked Disclaimer Engine (`jsm-response-guard-admin`)**: Space admins approve versioned macros with mandatory legal/SLA footers stored across sharded Jira Project Properties (`responseGuardPackIndex` and `responseGuardPack_1..N`, `<32 KB` per shard).

@@ -1,10 +1,10 @@
 # Approved Response Macros & Compliance Templates for JSM (`com.evidencepair.jsm.response.guard`)
 
-**Approved Response Macros & Compliance Templates for JSM** enforces standardized, regulator-ready agent communications across Jira Service Management (JSM) and Jira Cloud projects with dynamic variable interpolation, immutable legal/SLA disclaimer footers, and cryptographic SHA-256 dispatch audit trails.
+**Approved Response Macros & Compliance Templates for JSM** enforces standardized agent communications across Jira Service Management (JSM) and Jira Cloud projects with dynamic variable interpolation, immutable legal/SLA disclaimer footers, and cryptographic SHA-256 dispatch audit trails.
 
 - **App ID**: `ari:cloud:ecosystem::app/2dc4b4e7-5124-47ff-a660-aa35b09ecf19`
 - **App Key**: `com.evidencepair.jsm.response.guard`
-- **Vendor**: EvidencePair LLC (`support@titlecovenant.com`)
+- **Vendor**: EvidencePair LLC (support: <https://evidencepair.com/support/>)
 - **Runtime**: Forge `nodejs24.x` (100% *Runs on Atlassian*, Zero External Egress, Zero Forge SQL/KVS)
 - **Host Storage**: Sharded Jira Project Properties (`responseGuardPackIndex` + `responseGuardPack_1..N`, `<32 KB` per shard) and Jira Issue Properties (`responseGuardAudit`, `<32 KB`)
 
@@ -26,7 +26,9 @@
 ## Documentation Index
 
 - [User Guide](./USER_GUIDE.md)
-- [Privacy & Security Policy](./PRIVACY_AND_SECURITY.md)
+- [Privacy Policy](./PRIVACY_POLICY.md)
+- [Security Documentation](./SECURITY.md)
+- [Privacy & Security Architecture Summary](./PRIVACY_AND_SECURITY.md)
 - [End-User License Agreement (EULA)](./EULA.md)
 - [Marketplace Listing Copy](./LISTING_COPY.md)
 - [Progressive Cloud Pricing Table](./PRICING_TABLE.md)
